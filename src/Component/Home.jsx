@@ -4,7 +4,7 @@ import photo from "../assets/suraj_main_photo.png";
 export default function Home() {
   return (
     <>
-      <div className="w-full flex flex-col items-center text-center px-4 mt-10">
+      <div className="w-full flex flex-col items-center text-center px-4 mt-[100px]">
 
         {/* Profile Image */}
         <img
@@ -32,7 +32,7 @@ export default function Home() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
 
           <button className="bg-gray-800 text-white rounded-3xl px-6 py-3 border border-black hover:scale-105 transition">
-            Connect with me →
+           <a href="#contact"> Connect with me  →</a>
           </button>
 
           <button className="rounded-3xl px-6 py-3 border border-black hover:bg-gray-200 hover:scale-105 transition">

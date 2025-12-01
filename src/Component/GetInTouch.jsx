@@ -25,66 +25,71 @@ export default function GetInTouch() {
   }
 
   return (
-    <>
+    <div className="w-full flex justify-center mt-16 px-4" id="contact">
       <form
         onSubmit={handle}
-        className="w-full flex justify-center mt-10 px-4"
+        className="w-full max-w-xl p-8 space-y-5 rounded-2xl shadow-xl 
+        bg-white dark:bg-gray-900 dark:text-white transition"
       >
-        <div className="w-full max-w-xl p-6 space-y-4 rounded-xl shadow-lg bg-white">
+        {/* Titles */}
+        <p className="font-light text-center text-gray-600 dark:text-gray-300">
+          Connect with me
+        </p>
 
-          {/* Titles */}
-          <p className="font-light text-center text-gray-600">
-            Connect with me
-          </p>
+        <p className="font-bold text-4xl text-center text-gray-800 dark:text-white">
+          Get in touch
+        </p>
 
-          <p className="font-bold text-4xl text-center">
-            Get in touch
-          </p>
+        <p className="font-light text-center text-gray-500 dark:text-gray-400 text-sm sm:text-lg">
+          I'd love to hear from you! If you have any questions or feedback,
+          feel free to use the form below.
+        </p>
 
-          <p className="font-light text-center text-gray-500 text-sm sm:text-lg">
-            I'd love to hear from you! If you have any questions, comments, or feedback,
-            please use the form below.
-          </p>
+        {/* Input Fields */}
+        <div className="flex flex-col lg:flex-row gap-4">
+          <input
+            type="text"
+            className="border dark:border-gray-600 bg-gray-50 dark:bg-gray-800 
+            p-3 w-full rounded-lg focus:outline-none 
+            focus:ring-2 focus:ring-indigo-600 dark:focus:ring-yellow-400"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-          {/* Input Fields */}
-          <div className="flex flex-col lg:flex-row gap-4">
-            <input
-              type="text"
-              className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-gray-600"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+          <input
+            type="email"
+            className="border dark:border-gray-600 bg-gray-50 dark:bg-gray-800 
+            p-3 w-full rounded-lg focus:outline-none 
+            focus:ring-2 focus:ring-indigo-600 dark:focus:ring-yellow-400"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-            <input
-              type="email"
-              className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-gray-600"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+        {/* Message Area */}
+        <textarea
+          className="border dark:border-gray-600 bg-gray-50 dark:bg-gray-800 
+          p-3 w-full h-40 resize-none rounded-lg focus:outline-none 
+          focus:ring-2 focus:ring-indigo-600 dark:focus:ring-yellow-400"
+          placeholder="Your message..."
+          value={msg}
+          onChange={(e) => setMsg(e.target.value)}
+        ></textarea>
 
-          {/* Message Area */}
-          <textarea
-            className="border p-3 w-full h-40 resize-none rounded focus:outline-none focus:ring-2 focus:ring-gray-600"
-            placeholder="Your message..."
-            value={msg}
-            onChange={(e) => setMsg(e.target.value)}
-          ></textarea>
-
-          {/* Submit Button */}
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="px-6 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition"
-            >
-              Send Message →
-            </button>
-          </div>
-          
+        {/* Submit Button */}
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="px-6 py-3 bg-gray-800 dark:bg-white 
+            dark:text-black text-white rounded-full font-medium
+            hover:bg-black dark:hover:bg-gray-200 transition"
+          >
+            Send Message →
+          </button>
         </div>
       </form>
-    </>
+    </div>
   );
 }

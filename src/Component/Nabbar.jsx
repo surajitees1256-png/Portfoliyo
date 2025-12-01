@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,64 +9,45 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-white dark:bg-gray-900 dark:text-white shadow-sm px-6 py-4 flex justify-between items-center">
+      <nav className="w-full bg-white dark:bg-gray-900 dark:text-white shadow-md px-6 py-4 flex justify-between items-center fixed top-0 left-0 z-50">
 
-        {/* Left Logo */}
         <h1 className="font-bold text-2xl">
           Suraj <span className="font-extrabold text-3xl text-red-700">.</span>
         </h1>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-[18px] font-medium border-4 border-indigo-200 border-x-indigo-500 border-double rounded-xl px-5 py-2 dark:border-gray-600">
-          <li><Link to="/" className="hover:text-indigo-600 dark:hover:text-yellow-400">Home</Link></li>
-          <li><Link to="/about" className="hover:text-indigo-600 dark:hover:text-yellow-400">About me</Link></li>
-          <li className="hover:text-indigo-600 dark:hover:text-yellow-400">Service</li>
-          <li className="hover:text-indigo-600 dark:hover:text-yellow-400">My work</li>
-          <li><Link to="/testimonials" className="hover:text-indigo-600 dark:hover:text-yellow-400">Testimonials</Link></li>
+        <ul className="hidden md:flex gap-8 text-[18px] font-medium">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#portfolio">My work</a></li>
+          <li><a href="#contact">Portfoliyo</a></li>
         </ul>
 
-        {/* Right Section Desktop */}
         <div className="hidden md:flex items-center gap-4">
-          <h4 className="text-2xl cursor-pointer" onClick={toggleDarkMode}>
-            🌙
-          </h4>
-
-          <button className="px-4 py-1 bg-black text-white dark:bg-white dark:text-black rounded-md">
-            <Link to="/testimonials" className="hover:text-indigo-600 dark:hover:text-yellow-400">Connect</Link>
-          </button>
+          <h4 className="text-2xl cursor-pointer" onClick={toggleDarkMode}>🌙</h4>
+          <a href="#contact" className="px-4 py-1 bg-black text-white rounded-md">Connect</a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-3xl"
-          onClick={() => setOpen(!open)}
-        >
+        <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
           {open ? "✖" : "☰"}
         </button>
       </nav>
 
-      {/* Mobile Dropdown Menu */}
-      <div className={`md:hidden bg-white dark:bg-gray-900 dark:text-white px-6 py-4 shadow-md transition-all duration-300 
-        ${open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
-      `}>
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden bg-white dark:bg-gray-900 dark:text-white px-6 py-4 shadow transition-all duration-300 mt-16
+          ${open ? "max-h-[400px]" : "max-h-0 overflow-hidden"}
+        `}
+      >
         <ul className="flex flex-col gap-4 text-lg font-medium">
-          <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
-          <li><Link to="/about" onClick={() => setOpen(false)}>About me</Link></li>
-          <li>Service</li>
-          <li>My work</li>
-          <li><Link to="/testimonials" onClick={() => setOpen(false)}>Testimonials</Link></li>
+          <li><a href="#home" onClick={() => setOpen(false)}>Home</a></li>
+          <li><a href="#about" onClick={() => setOpen(false)}>About me</a></li>
+          <li><a href="#service" onClick={() => setOpen(false)}>Services</a></li>
+          <li><a href="#portfolio" onClick={() => setOpen(false)}>My work</a></li>
+          <li><a href="#contact" onClick={() => setOpen(false)}>Contact</a></li>
 
-          {/* Dark Mode Toggle in Mobile */}
-          <h4 
-            className="text-2xl cursor-pointer mt-2"
-            onClick={toggleDarkMode}
-          >
-            ☀️ Dark Mode
-          </h4>
-
-          <button className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-md w-32">
-            <Link to="/testimonials">Connect</Link>
-          </button>
+          <h4 className="text-2xl cursor-pointer" onClick={toggleDarkMode}>🌙</h4>
+          <a href="#contact" className="px-4 py-2 bg-black text-white rounded-md w-32 text-center">Connect</a>
         </ul>
       </div>
     </>

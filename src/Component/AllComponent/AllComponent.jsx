@@ -8,11 +8,11 @@ import Portfoliyo from '../Portfoliyo'
 export default function AllComponent() {
   return (
     <>
-      <Home/>
-      <About/>
-      <Service/>
-      <Portfoliyo/>
-      <GetInTouch/>
+      <div id="home"><Home /></div>
+      <div id="about"><About /></div>
+      <div id="service"><Service /></div>
+      <div id="portfolio"><Portfoliyo /></div>
+      <div id="contact"><GetInTouch /></div>
     </>
   )
 }

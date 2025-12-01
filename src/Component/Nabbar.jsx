@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
-  // Your required simple toggle function
   function toggleDarkMode() {
     document.documentElement.classList.toggle("dark");
   }
@@ -27,28 +26,50 @@ export default function Navbar() {
           <li><Link to="/testimonials" className="hover:text-indigo-600 dark:hover:text-yellow-400">Testimonials</Link></li>
         </ul>
 
-        {/* Right Section */}
+        {/* Right Section Desktop */}
         <div className="hidden md:flex items-center gap-4">
-
-          {/* Dark Mode Icon */}
-          <h4
-            className="text-2xl cursor-pointer"
-            onClick={toggleDarkMode}
-          >
+          <h4 className="text-2xl cursor-pointer" onClick={toggleDarkMode}>
             🌙
           </h4>
 
-          <button className="px-4 py-1 bg-black text-white dark:bg-white dark:text-black rounded-md"><Link to="/testimonials" className="hover:text-indigo-600 dark:hover:text-yellow-400">Connect</Link>
-            
+          <button className="px-4 py-1 bg-black text-white dark:bg-white dark:text-black rounded-md">
+            <Link to="/testimonials" className="hover:text-indigo-600 dark:hover:text-yellow-400">Connect</Link>
           </button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-3xl">
-          ☰
+        <button 
+          className="md:hidden text-3xl"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "✖" : "☰"}
         </button>
       </nav>
-      
+
+      {/* Mobile Dropdown Menu */}
+      <div className={`md:hidden bg-white dark:bg-gray-900 dark:text-white px-6 py-4 shadow-md transition-all duration-300 
+        ${open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+      `}>
+        <ul className="flex flex-col gap-4 text-lg font-medium">
+          <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
+          <li><Link to="/about" onClick={() => setOpen(false)}>About me</Link></li>
+          <li>Service</li>
+          <li>My work</li>
+          <li><Link to="/testimonials" onClick={() => setOpen(false)}>Testimonials</Link></li>
+
+          {/* Dark Mode Toggle in Mobile */}
+          <h4 
+            className="text-2xl cursor-pointer mt-2"
+            onClick={toggleDarkMode}
+          >
+            🌙 Dark Mode
+          </h4>
+
+          <button className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-md w-32">
+            <Link to="/testimonials">Connect</Link>
+          </button>
+        </ul>
+      </div>
     </>
   );
 }

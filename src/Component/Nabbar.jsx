@@ -62,7 +62,7 @@ export default function Navbar() {
             className="text-2xl cursor-pointer mt-2"
             onClick={toggleDarkMode}
           >
-            🌙 Dark Mode
+            ☀️ Dark Mode
           </h4>
 
           <button className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-md w-32">

@@ -26,30 +26,30 @@ export default function Portfoliyo() {
 
           {/* Card 1 */}
           <div className="border rounded-xl p-6 shadow-md w-full max-w-xs text-center">
-            <h1 className="text-3xl">©</h1>
-            <h2 className="font-bold text-xl mt-2">Languages</h2>
-            <p className="text-gray-500 mt-1">HTML, CSS, JavaScript, React</p>
+            <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fieork0qcwe5oaw4ao31h.jpg" alt="" className='h-52 w-full ' />
+            <input type="button" className='' />Frentend Project
+             <br />web design
           </div>
 
           {/* Card 2 */}
           <div className="border rounded-xl p-6 shadow-md w-full max-w-xs text-center">
-            <h1 className="text-3xl">©</h1>
-            <h2 className="font-bold text-xl mt-2">Education</h2>
-            <p className="text-gray-500 mt-1">Master of Computer Application</p>
+            <img src="https://play-lh.googleusercontent.com/Av_6zvlTGrlnj6CkL9DPIYRWp_XyHUAw42CFBduGJXfoH_PPwkrmIdpDMYxnaP79bxM" alt="" className='h-52 w-full '  />
+            <input type="button" className='' />Geo Base App
+             <br />mobile app
           </div>
 
           {/* Card 3 */}
           <div className="border rounded-xl p-6 shadow-md w-full max-w-xs text-center">
-            <h1 className="text-3xl">©</h1>
-            <h2 className="font-bold text-xl mt-2">Projects</h2>
-            <p className="text-gray-500 mt-1">More than 5 Projects</p>
+            <img src="https://www.uxdesigninstitute.com/blog/wp-content/uploads/2024/11/101_UX_vs_UI_illustration_blog-1.png" alt="" className='h-52 w-full '  />
+             <input type="button" className='' />UI/UX Designing
+             <br />ui/ux design
           </div>
 
           {/* Card 4 */}
           <div className="border rounded-xl p-6 shadow-md w-full max-w-xs text-center">
-            <h1 className="text-3xl">©</h1>
-            <h2 className="font-bold text-xl mt-2">Experience</h2>
-            <p className="text-gray-500 mt-1">MERN Stack Developer</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkNbo__kldcQNntD2AdktTqF4L-BNY_9Y_aQ&s" alt="" className='h-52 w-full '  />
+             <input type="button" className='' />Photography Site
+             <br />web design         
           </div>
         </div>
 

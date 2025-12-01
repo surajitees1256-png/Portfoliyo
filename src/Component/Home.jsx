@@ -2,9 +2,17 @@ import React from "react";
 import photo from "../assets/suraj_main_photo.png";
 
 export default function Home() {
+  function downloadCV() {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";
+    link.download = "resume.pdf";
+    link.click();
+  }
   return (
-    <div id="home" className="pt-28 w-full flex flex-col items-center text-center px-4">
-
+    <div
+      id="home"
+      className="pt-28 w-full flex flex-col items-center text-center px-4"
+    >
       {/* Profile Image */}
       <img
         src={photo}
@@ -19,8 +27,12 @@ export default function Home() {
 
       {/* Sub Heading */}
       <div className="mt-6 font-extralight leading-snug">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl">Frontend Web Developer</h1>
-        <h1 className="text-3xl sm:text-4xl md:text-6xl mt-2">based in India.</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl">
+          Frontend Web Developer
+        </h1>
+        <h1 className="text-3xl sm:text-4xl md:text-6xl mt-2">
+          based in India.
+        </h1>
       </div>
 
       {/* Buttons */}
@@ -31,8 +43,10 @@ export default function Home() {
         >
           Connect with me →
         </a>
-
-        <button className="rounded-3xl px-6 py-3 border border-black hover:bg-gray-200 hover:scale-105 transition">
+        <button
+          onClick={downloadCV}
+          className="rounded-3xl px-6 py-3 border border-black hover:bg-gray-200 hover:scale-105 transition"
+        >
           My resume ↧
         </button>
       </div>
